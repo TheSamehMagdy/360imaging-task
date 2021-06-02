@@ -1,0 +1,23 @@
+<%- include ('../partials/header.ejs') %>
+
+        <div class="row text-center">
+            <div class="col-12 mx-auto">
+                <h1>Write a comment about: <%=post.title%></h1>
+                <div class="w-50 my-3 mx-auto">
+                    <form action="/posts/<%=post._id%>/comments" method="POST">
+                        <div class="mb-3">
+                            <input class="form-control" type="text" name="comment[author]" placeholder="Your name" required>    
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" type="text" name="comment[text]" placeholder="Write a comment on this post..." rows="5" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-success btn-block">Submit comment</button>
+                        </div>
+                    </form>
+                    <a href="/posts/<%=post._id%>">Go Back</a>
+                </div>
+            </div>
+        </div>
+  
+<%- include ('../partials/footer.ejs') %>

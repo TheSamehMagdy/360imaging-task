@@ -1,0 +1,63 @@
+<%- include ('../partials/header.ejs') %>
+
+        <div class="row text-center">
+                <div class="post col-sm-12 mb-3">
+                    <div class="card">
+                        <img class="card-img-top" src="<%=post.image%>" alt="Card image cap">
+                        <div class="card-body d-flex flex-column">
+                            <h1 class="card-title post-title"><%=post.title%></h1>
+                            <p class="card-text text-start"><%=post.body%></p>
+                            <p class="text-start fw-light fst-italic">Published: <%=post.createdAt.toDateString()%></p>
+                        </div>
+                        <div class="d-flex flex-row-reverse mb-3">
+                            <form class="delete-form ms-3 me-3" action="/posts/<%=post._id%>?_method=DELETE" method="POST">
+                                <button class="btn btn-xs btn-danger">Delete Post</button>    
+                            </form>
+                            <a href="/posts/<%=post._id%>/edit" class="btn btn-xs btn-info text-white">Edit Post</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+
+            <div class="card">
+
+                <div class="card-header">
+                    <h5 class="d-inline">Comments</h5>
+                    <a class="btn btn-success float-end" href="/posts/<%= post._id %>/comments/new">Write a Comment</a>
+                </div>
+
+                <div class="card-body">
+                    <ul class="list-group list-group-flush">
+                        <% post.comments.forEach(function(comment){ %>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            Comment by: <strong><%=comment.author%></strong>
+                                        </div>
+                                        <p class="d-inline">
+                                            <%= comment.text %>  
+                                        </p>
+                                        <div class="float-end">
+                                            <a class="btn btn-xs btn-primary mr-2"
+                                                href="/posts/<%=post._id %>/comments/<%=comment._id %>/edit">Edit</a>
+                                            <form class="delete-form d-inline" action="/posts/<%=post._id %>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+                                                <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        <% }); %>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+<%- include ('../partials/footer.ejs') %>

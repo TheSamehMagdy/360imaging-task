@@ -1,0 +1,19 @@
+.post {
+	margin: 0 auto;
+}
+
+.card img {
+	background-size: cover;
+}
+
+.card-text {
+	white-space: pre-line;
+}
+
+.post-title {
+	font-size: 2.5em;
+}
+
+.read-more {
+	font-size: 1.2em;
+}

@@ -1,0 +1,20 @@
+<%- include ('../partials/header.ejs') %>
+
+        <div class="row text-center">
+            <div class="col-lg-12 mx-auto">
+                <h1 class="mb-4">Edit your comment</h1>
+                <div class="w-50 mx-auto">
+                    <form action="/posts/<%=post_id%>/comments/<%=comment._id%>?_method=PUT" method="POST" enctype="x-www-form-urlencoded">
+                        <div class="mb-3">
+                            <input class="form-control" type="text" name="comment[text]" value="<%=comment.text%>" required>    
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-success btn-lg btn-block">Save Changes</button>
+                        </div>
+                    </form>
+                    <a href="/posts/<%=post_id%>">Go Back</a> 
+                </div>
+            </div>
+        </div>
+    
+<%- include ('../partials/footer.ejs') %>

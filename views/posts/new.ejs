@@ -1,0 +1,29 @@
+<%- include ('../partials/header.ejs') %>
+
+        <div class="mt-4 row text-center">
+            <div class="col-lg-12 mx-auto">
+                <h1 class="mb-4">Create a New Post</h1>
+                <div class="w-50 mx-auto">
+                    <form action="/posts" method="POST" enctype="x-www-form-urlencoded">
+                        <div class="mb-3">
+                            <input class="form-control" type="text" name="post[title]" placeholder="title" required>    
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="text" name="post[image]" placeholder="image url" required>    
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" type="text" name="post[author]" placeholder="author" required>    
+                        </div>
+                        <div class="mb-3">
+                            <textarea rows="10" cols="40" class="form-control" name="post[body]" placeholder="post"></textarea>    
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-success btn-lg btn-block">Save Post</button>
+                        </div>
+                    </form>
+                    <a href="/">Go Back</a> 
+                </div>
+            </div>
+        </div>
+  
+<%- include ('../partials/footer.ejs') %>
