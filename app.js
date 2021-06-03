@@ -27,4 +27,4 @@ app.use(postRoutes);
 app.use(commentRoutes);
 
 // Start server
-app.listen(8000, () => console.log('listening on 8000'));
+app.listen(process.env.PORT, process.env.IP, () => console.log('Server is running...'));
