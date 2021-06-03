@@ -1,5 +1,5 @@
 # 360Imaging Task
-An application for sharing cool hangout places in Egypt.
+A simple blog with CRUD for posts and comments.
 
 # Features
 • Functional blog with two features: Posts and Comments.
